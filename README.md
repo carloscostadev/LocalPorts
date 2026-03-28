@@ -9,14 +9,14 @@ A lightweight macOS menu bar app that shows all active localhost ports. Built wi
 ## Features
 
 - **Auto-detect** all TCP ports listening on localhost
-- **Group by project** — ports are grouped by their project directory
-- **Favorites** — pin frequently used ports to the top
-- **Kill process** — stop a process with one click (SIGTERM → SIGKILL fallback)
-- **Restart process** — kill and relaunch with the same command
-- **Open in browser** — open `localhost:<port>` in your default browser
-- **Open in Warp** — open the project directory in Warp terminal
-- **Launch at login** — start automatically when you log in
-- **Polls every 3s** — always up to date
+- **Group by project** - ports are grouped by their project directory
+- **Favorites** - pin frequently used ports to the top
+- **Kill process** - stop a process with one click (SIGTERM → SIGKILL fallback)
+- **Restart process** - kill and relaunch with the same command
+- **Open in browser** - open `localhost:<port>` in your default browser
+- **Open in Warp** - open the project directory in Warp terminal
+- **Launch at login** - start automatically when you log in
+- **Polls every 3s** - always up to date
 
 ## Installation
 
@@ -38,7 +38,7 @@ Requirements:
 brew install xcodegen
 
 # Clone and build
-git clone https://github.com/carloscostadev/LocalPorts.git
+git clone https://github.com/carloscostadev/localports.git
 cd LocalPorts
 xcodegen generate
 xcodebuild -scheme LocalPorts -configuration Release build SYMROOT=build
@@ -76,9 +76,9 @@ Ports are grouped by project root, detected by looking for `.git`, `package.json
 
 ## Configuration
 
-- **Favorites** — click the star icon to pin a port to the top (persisted in UserDefaults)
-- **Launch at login** — toggle in the dropdown menu
-- **Quit** — click "Sair" in the dropdown
+- **Favorites** - click the star icon to pin a port to the top (persisted in UserDefaults)
+- **Launch at login** - toggle in the dropdown menu
+- **Quit** - click "Sair" in the dropdown
 
 ## Tech Stack
 
@@ -98,4 +98,4 @@ Ports are grouped by project root, detected by looking for `.git`, `package.json
 
 ## License
 
-MIT — see [LICENSE](LICENSE)
+MIT - see [LICENSE](LICENSE)
