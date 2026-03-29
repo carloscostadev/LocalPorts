@@ -92,6 +92,10 @@ struct PortListView: View {
                 Text("A cada 3s")
                     .font(.caption2)
                     .foregroundStyle(.tertiary)
+                Spacer()
+                Text("v\(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "?")")
+                    .font(.caption2)
+                    .foregroundStyle(.tertiary)
             }
             .padding(.horizontal, 12)
             .padding(.bottom, 4)

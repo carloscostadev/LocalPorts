@@ -6,7 +6,7 @@ struct PortEntry: Identifiable, Equatable, Hashable {
     let projectPath: String
     let processName: String
 
-    var id: Int { pid }
+    var id: String { "\(pid)-\(port)" }
 
     var displayPath: String {
         let home = FileManager.default.homeDirectoryForCurrentUser.path()
