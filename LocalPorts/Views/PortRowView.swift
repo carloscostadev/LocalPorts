@@ -3,6 +3,7 @@ import SwiftUI
 struct PortRowView: View {
     let entry: PortEntry
     let isFavorite: Bool
+    var showPath: Bool = true
     let onKill: () -> Void
     let onOpenBrowser: () -> Void
     let onRestart: () -> Void
@@ -20,11 +21,17 @@ struct PortRowView: View {
                 .fill(isKilling ? .yellow : .green)
                 .frame(width: 6, height: 6)
 
-            Text(entry.displayPath)
-                .font(.system(.caption, design: .monospaced))
-                .foregroundStyle(isKilling ? .tertiary : .secondary)
-                .lineLimit(1)
-                .truncationMode(.middle)
+            Text(entry.processName)
+                .font(.system(.caption2, design: .monospaced))
+                .foregroundStyle(isKilling ? .tertiary : .tertiary)
+
+            if showPath {
+                Text(entry.displayPath)
+                    .font(.system(.caption, design: .monospaced))
+                    .foregroundStyle(isKilling ? .tertiary : .secondary)
+                    .lineLimit(1)
+                    .truncationMode(.middle)
+            }
 
             Spacer()
 

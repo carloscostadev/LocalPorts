@@ -71,20 +71,18 @@ final class PortScanner {
 
         for i in entries.indices {
             let path = Self.resolveProjectPath(pid: entries[i].pid)
+            let isSystemPath = path.isEmpty || path == "/" || path.hasPrefix("/private/")
             entries[i] = PortEntry(
                 pid: entries[i].pid,
                 port: entries[i].port,
-                projectPath: path.isEmpty ? entries[i].processName : path,
+                projectPath: isSystemPath ? entries[i].processName : path,
                 processName: entries[i].processName
             )
         }
 
+        let systemProcesses: Set<String> = ["ControlCe", "rapportd", "stable", "figma_age", "GitHub"]
         entries = entries.filter { entry in
-            let systemProcesses = ["ControlCe", "rapportd", "stable", "figma_age", "GitHub"]
-            if systemProcesses.contains(entry.processName) { return false }
-            // Filter out entries where we couldn't resolve a meaningful project path
-            if entry.projectPath == "/" || entry.projectPath.hasPrefix("/private/") { return false }
-            return true
+            !systemProcesses.contains(entry.processName)
         }
 
         entries.sort { $0.port < $1.port }

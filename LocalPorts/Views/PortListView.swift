@@ -47,7 +47,7 @@ struct PortListView: View {
                 ForEach(Array(groupedPorts.enumerated()), id: \.offset) { index, group in
                     sectionHeader(icon: "folder", title: group.projectName, color: .secondary)
                     ForEach(group.entries) { entry in
-                        portRow(entry: entry)
+                        portRow(entry: entry, showPath: group.entries.count == 1)
                     }
                     if index < groupedPorts.count - 1 {
                         Divider()
@@ -137,10 +137,11 @@ struct PortListView: View {
         .padding(.bottom, 2)
     }
 
-    private func portRow(entry: PortEntry) -> some View {
+    private func portRow(entry: PortEntry, showPath: Bool = true) -> some View {
         PortRowView(
             entry: entry,
             isFavorite: favoritesManager.isFavorite(port: entry.port),
+            showPath: showPath,
             onKill: {
                 ProcessManager.kill(pid: entry.pid)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
