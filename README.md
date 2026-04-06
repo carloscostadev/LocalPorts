@@ -4,6 +4,8 @@ A lightweight macOS menu bar app that monitors all active localhost ports. See w
 
 [Website](https://localports.carloscostadev.pt) | [Download](https://github.com/carloscostadev/LocalPorts/releases/latest)
 
+![LocalPorts](docs/screenshot.png)
+
 ## Features
 
 - **Real-time port scanning** — auto-refreshes every 3s, no config needed
