@@ -27,7 +27,6 @@ Download the latest `.zip` from [Releases](https://github.com/carloscostadev/Loc
 ```bash
 git clone https://github.com/carloscostadev/LocalPorts.git
 cd LocalPorts
-swift build -c release
 ./scripts/build.sh
 ```
 
