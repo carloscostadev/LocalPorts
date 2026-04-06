@@ -1,3 +1,4 @@
+import AppKit
 import SwiftUI
 
 @main
@@ -6,6 +7,7 @@ struct LocalPortsApp: App {
     @State private var favoritesManager = FavoritesManager()
 
     init() {
+        NSApplication.shared.setActivationPolicy(.accessory)
         scanner.startPolling()
     }
 
@@ -24,5 +26,6 @@ struct LocalPortsApp: App {
             }
         }
         .menuBarExtraStyle(.window)
+        .defaultSize(width: 380, height: 500)
     }
 }
