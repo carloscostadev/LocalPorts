@@ -13,7 +13,6 @@ A lightweight macOS menu bar app that monitors all active localhost ports. See w
 - **Favorites** — pin frequently used ports to the top, persisted across restarts
 - **Process management** — kill, restart, or open any port in the browser with one click
 - **Open in terminal** — jump straight to the project directory in Warp or Terminal
-- **System filter** — hides system processes (ControlCenter, rapportd, Spotify, etc.)
 - **Launch at login** — starts automatically with macOS
 
 ## Install
